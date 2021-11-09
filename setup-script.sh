@@ -17,3 +17,15 @@ curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.9/2020-08-04/
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version
+
+# install terraform 1.0
+wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+sudo unzip terraform_1.0.0_linux_amd64.zip
+sudo mv terraform /usr/bin/
+terraform -v
+
+# install helm
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh  # -v v3.0.0  (for a specific version)
+helm version
