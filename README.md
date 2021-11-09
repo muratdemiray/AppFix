@@ -35,7 +35,7 @@ To standardize development environment you’ve started to work on docker contai
 2. Single Helm command to deploy application to Kubernetes
 3. Single Helm command to deploy mysql
 
-# RUN & DEPLOY PROJECT
+# Deploy & Run Project
 1. Login an AWS EC2
 2. Install git # sudo yum install -y git
 3. Clone the github repo using # https://github.com/muratdemiray/AppFix.git
