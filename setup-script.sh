@@ -1,4 +1,4 @@
-# install git & copy repository
+# install git & copy repository - RUN MANUALLY
 # $ sudo yum install -y git
 # $ git clone https://github.com/muratdemiray/AppFix.git
 
