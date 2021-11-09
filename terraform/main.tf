@@ -2,6 +2,9 @@ provider "aws" {
   region = "us-east-2"
 }
 
+data "aws_availability_zones" "available" {
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   
@@ -37,7 +40,6 @@ provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.cluster.token
-  load_config_file       = false
  
 }
 
@@ -53,7 +55,7 @@ module "eks" {
   node_groups = {
     first = {
       desired_capacity = 1
-      max_capacity     = 10
+      max_capacity     = 3
       min_capacity     = 1
 
       instance_type = "t3a.medium"
@@ -62,8 +64,5 @@ module "eks" {
 
   write_kubeconfig = true
   kubeconfig_output_path = "${var.kubeconfig_path}"
-
-
-
 
 }

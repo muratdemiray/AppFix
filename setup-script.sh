@@ -29,3 +29,10 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get
 chmod 700 get_helm.sh
 ./get_helm.sh  # -v v3.0.0  (for a specific version)
 helm version
+
+# Configure AWS
+aws configure
+# AWS Access Key ID [None]: XXX
+# AWS Secret Access Key [None]: XXX
+# Default region name [None]: us-east-2
+# Default output format [None]: json
