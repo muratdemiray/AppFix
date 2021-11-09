@@ -15,12 +15,12 @@ module "vpc" {
   enable_dns_hostnames = true
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
   }
 }
@@ -63,7 +63,7 @@ module "eks" {
   write_kubeconfig = true
   kubeconfig_output_path = "${var.kubeconfig_path}"
 
-  workers_additional_policies = [aws_iam_policy.worker_policy.arn]  
+
 
 
 }
