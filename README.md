@@ -12,7 +12,7 @@ Developer team is working on a python Project. Because of environment difference
 To fix this problem you’ve decided to run that application in a container on a Kubernetes cluster.
 To standardize development environment you’ve started to work on docker containers.
 
-##  Summary / Scenerio
+##  Summary / Scenario
 Docker Base Image for Python App: alpine:3.7
 - Terraform version must be 1.0
 - Helm 3
