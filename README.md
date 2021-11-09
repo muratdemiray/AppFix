@@ -52,6 +52,8 @@ To standardize development environment you’ve started to work on docker contai
     - <!> external-ip dns propogration may take some time, wait for a time if you can't access url adnd try again!
 
 ## Uninstall (only helm charts & destroys EKS Cluster)
+-  execute  # sh ./AppFix/uninstall-script.sh \
+   or uninstall manually runinng the commands below 
 -  $ helm uninstall flaskapp 
 -  $ helm uninstall mysql
 -  $ cd AppFix/terraform
