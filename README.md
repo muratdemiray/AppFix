@@ -7,12 +7,12 @@ This project aims to run an application in a container on a Kubernetes cluster f
 - AWS account (user credentials)
 - AWS EC2 running
 
-##  Summary / Scenerio
+##  Summary / Scenario
 Developer team is working on a python Project. Because of environment differences, the codes that is shared by developer team is not working on production cluster.
 To fix this problem you’ve decided to run that application in a container on a Kubernetes cluster.
 To standardize development environment you’ve started to work on docker containers.
 
-##  Summary / Scenario
+##  Requirements
 Docker Base Image for Python App: alpine:3.7
 - Terraform version must be 1.0
 - Helm 3
