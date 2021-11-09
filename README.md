@@ -39,8 +39,8 @@ To standardize development environment you’ve started to work on docker contai
 1. Login/shh to your AWS EC2
 2. Install git # sudo yum install -y git
 3. Clone the github repo using # git clone https://github.com/muratdemiray/AppFix.git
-4. Follow each steps in setup-script.sh (manual installation if you edit or want to debug)
-        or      
+4. Follow each steps in setup-script.sh (manual installation if you edit or want to debug) \
+        or  \
    execute  # sh ./AppFix/setup-script.sh (<!>don't forget to enter aws credentials when it asks)
 5. Wait for cluster creation and app delployment on cluster.
 6. Check if K8s pods & service are running
@@ -53,7 +53,7 @@ To standardize development environment you’ve started to work on docker contai
 
 ## Uninstall (only helm charts & destroys EKS Cluster)
 -  execute  # sh ./AppFix/uninstall-script.sh \
-   or uninstall manually runinng the commands below 
+   or uninstall manually runinng the commands below: 
 -  $ helm uninstall flaskapp 
 -  $ helm uninstall mysql
 -  $ cd AppFix/terraform
