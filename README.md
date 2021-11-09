@@ -51,10 +51,9 @@ To standardize development environment you’ve started to work on docker contai
     - open a web browser and visit [external-ip]:3000
     - <!> external-ip dns propogration may take some time, wait for a time if you can't access url adnd try again!
 
-## Deploy & Run Project
-Uninstall (only helm charts & destroys EKS Cluster)
-    -  $ helm uninstall flaskapp 
-    -  $ helm uninstall mysql
-    -  $ cd AppFix/terraform
-    -  $ terraform destroy -auto-approve
+## Uninstall (only helm charts & destroys EKS Cluster)
+-  $ helm uninstall flaskapp 
+-  $ helm uninstall mysql
+-  $ cd AppFix/terraform
+-  $ terraform destroy -auto-approve
 
