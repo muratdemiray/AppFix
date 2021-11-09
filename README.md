@@ -38,7 +38,7 @@ To standardize development environment you’ve started to work on docker contai
 # Deploy & Run Project
 1. Login an AWS EC2
 2. Install git # sudo yum install -y git
-3. Clone the github repo using # https://github.com/muratdemiray/AppFix.git
+3. Clone the github repo using # git clone https://github.com/muratdemiray/AppFix.git
 4. Follow each steps in setup-script.sh (manual installation if you edit or want to debug)
             or
    execute  # sh ./AppFix/setup-script.sh (don't forget to enter aws credentials when it asks)
