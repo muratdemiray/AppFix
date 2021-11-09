@@ -44,10 +44,10 @@ To standardize development environment you’ve started to work on docker contai
    execute  # sh ./AppFix/setup-script.sh (<!>don't forget to enter aws credentials when it asks)
 5. Wait for cluster creation and app delployment on cluster.
 6. Check if K8s pods & service are running
-    a. # kubectl get pods
-    b. # kubectl get svc flask-web-svc
+    -  $ kubectl get pods
+    -  $ kubectl get svc flask-web-svc
 7. Check if app runs
-    a. grep external-ip output from step 6
-    b. open a web browser and visit <external-ip>:3000
-    c. <!> external-ip dns propogration may take some time, wait for a time if you can't access url adnd try again!
+    - grep external-ip output from step 6
+    - open a web browser and visit <external-ip>:3000
+    - <!> external-ip dns propogration may take some time, wait for a time if you can't access url adnd try again!
 
