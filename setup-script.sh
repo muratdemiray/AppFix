@@ -37,8 +37,21 @@ aws configure
 # Default region name [None]: us-east-2
 # Default output format [None]: json
 
-sudo docker build -t  testapp:latest AppFix/docker/
+# Build Docker image and push to the repo
+sudo docker build -t  testapp AppFix/docker/
+sudo docker login
+# username
+# password 
+sudo docker push ironmoon1/app:latest
 
+# Create EKS(k8s) Cluster
 cd terraform
 terraform apply -auto-approve
 export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster 
+cd ../
+
+# Deploy app & mysql
+helm install --set db.username=testuser,db.password=usertest flaskapp helm-app/
+helm install --set db.username=testuser,db.password=usertest mysql helm-mysql/
+
+
