@@ -46,14 +46,21 @@ aws configure # be sure to login!!!
 # password: XXXX 
 # $ sudo docker push your-repo/app:latest
 
+# Installing aws-iam-authenticator for EKS
+curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
+openssl sha1 -sha256 aws-iam-authenticator
+chmod +x ./aws-iam-authenticator
+mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+aws-iam-authenticator help
+
 # Create EKS(k8s) Cluster
-cd terraform
+cd ./AppFix/terraform
+terraform init
 terraform apply -auto-approve
-export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster 
+export KUBECONFIG=$KUBECONFIG:./kubeconfig_AppFix-cluster 
 cd ../
 
 # Deploy app & mysql
 helm install --set db.username=testuser,db.password=usertest flaskapp helm-app/
 helm install --set db.username=testuser,db.password=usertest mysql helm-mysql/
-
-
