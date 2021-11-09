@@ -30,19 +30,21 @@ chmod 700 get_helm.sh
 ./get_helm.sh  # -v v3.0.0  (for a specific version)
 helm version
 
-# Configure AWS
-aws configure
+# !!! Configure AWS - IMPORTANT !!!
+aws configure # be sure to login!!!
 # AWS Access Key ID [None]: XXX
 # AWS Secret Access Key [None]: XXX
 # Default region name [None]: us-east-2
 # Default output format [None]: json
 
 # Build Docker image and push to the repo
-sudo docker build -t  testapp AppFix/docker/
-sudo docker login
-# username
-# password 
-sudo docker push ironmoon1/app:latest
+    # If you build a new image, don't forget to change
+    # imagename variable in the "/helm-app/values.yaml" 
+# $ sudo docker build -t  testapp AppFix/docker/
+# $ sudo docker login # be sure to login!
+# username: XXXX
+# password: XXXX 
+# $ sudo docker push your-repo/app:latest
 
 # Create EKS(k8s) Cluster
 cd terraform

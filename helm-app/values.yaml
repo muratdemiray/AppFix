@@ -1,0 +1,14 @@
+#Flask app values.
+app:
+  flaskreplicaCount: 2
+  imagename: ironmoon1/app:latest
+
+#Database values.
+db:
+  username: user
+  password: TestPWD
+  host: mysql
+  db_name: TEST
+  #db-root-credentials
+  rootpassword: YWRtaW4xMjM=
+
