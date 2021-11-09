@@ -2,15 +2,15 @@
 
 This project aims to run an application in a container on a Kubernetes cluster for fixing.
 
-## Pre-requisites
-
-- AWS account (user credentials: access-key-id,secret-access-key)
-- AWS EC2 running
-
 ##  Summary / Scenario
 Developer team is working on a python Project. Because of environment differences, the codes that is shared by developer team is not working on production cluster.
 To fix this problem you’ve decided to run that application in a container on a Kubernetes cluster.
 To standardize development environment you’ve started to work on docker containers.
+
+## Pre-requisites
+
+- AWS account (user credentials: access-key-id,secret-access-key)
+- AWS EC2 running
 
 ##  Requirements
 - Docker Base Image for Python App: alpine:3.7
