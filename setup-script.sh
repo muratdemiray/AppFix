@@ -58,9 +58,19 @@ aws-iam-authenticator help
 cd ./AppFix/terraform
 terraform init
 terraform apply -auto-approve
-export KUBECONFIG=$KUBECONFIG:./kubeconfig_AppFix-cluster 
+export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster 
 cd ../
 
 # Deploy app & mysql
 helm install --set db.username=testuser,db.password=usertest flaskapp helm-app/
 helm install --set db.username=testuser,db.password=usertest mysql helm-mysql/
+
+# Check K8s pods &  service
+kubectl get pods
+kubectl get svc flask-web-svc
+
+# Check if app runs
+# grep external-ip output
+# open a webbrowser and visit <external-ip>:3000
+# !!! external-ip dns propogration may take some time, wait for a time if you can't access url
+
