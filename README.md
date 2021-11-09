@@ -4,7 +4,7 @@ This project aims to run an application in a container on a Kubernetes cluster f
 
 ## Pre-requisites
 
-- AWS account
+- AWS account (user credentials)
 - AWS EC2 running
 
 ##  Summary / Scenerio
@@ -29,7 +29,7 @@ Docker Base Image for Python App: alpine:3.7
 3. Dockerfile for containerization
 4. Terraform folder that contains terraform files at the root directory of the project (it should deploy a Kubernetes cluster)
 5. Helm chart of application
-6. 
+
 ##  Objectives
 1. A single command should provision the Kubernetes Cluster on a cloud platform that you’ve choosed (Terraform infra provisioning)
 2. Single Helm command to deploy application to Kubernetes
@@ -37,5 +37,17 @@ Docker Base Image for Python App: alpine:3.7
 
 # RUN & DEPLOY PROJECT
 1. Login an AWS EC2
-2. install git # sudo yum install -y git
-3. clone the github repo using # https://github.com/muratdemiray/AppFix.git
+2. Install git # sudo yum install -y git
+3. Clone the github repo using # https://github.com/muratdemiray/AppFix.git
+4. Follow each steps in setup-script.sh (manual installation if you edit or want to debug)
+            or
+   execute  # sh ./AppFix/setup-script.sh (don't forget to enter aws credentials when it asks)
+5. Wait for cluster creation and app delployment on cluster.
+6. Check if K8s pods & service are running
+    # kubectl get pods
+    # kubectl get svc flask-web-svc
+7. Check if app runs
+    # grep external-ip output from step 6
+    # open a web browser and visit <external-ip>:3000
+    # <!> external-ip dns propogration may take some time, wait for a time if you can't access url adnd try again!
+
