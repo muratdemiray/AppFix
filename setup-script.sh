@@ -36,3 +36,9 @@ aws configure
 # AWS Secret Access Key [None]: XXX
 # Default region name [None]: us-east-2
 # Default output format [None]: json
+
+sudo docker build -t  testapp:latest AppFix/docker/
+
+cd terraform
+terraform apply -auto-approve
+export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster 
