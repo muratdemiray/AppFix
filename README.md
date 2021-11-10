@@ -9,7 +9,7 @@ To standardize development environment you’ve started to work on docker contai
 
 ## Pre-requisites
 
-- AWS account (user credentials: access-key-id,secret-access-key)
+- AWS account (user credentials: access-key-id,secret-access-key,region:us-east-2)
 - AWS EC2 running
 
 ##  Requirements
@@ -41,7 +41,7 @@ To standardize development environment you’ve started to work on docker contai
 3. Clone the github repo using # git clone https://github.com/muratdemiray/AppFix.git
 4. Follow each steps in setup-script.sh (manual installation if you edit or want to debug) \
         or  \
-   execute  # sh ./AppFix/setup-script.sh (<!>don't forget to enter aws credentials when it promts)
+   execute  # sh ./AppFix/setup-script.sh (<!>don't forget to enter aws credentials when it promts, region:us-east-2)
 5. Wait for cluster creation and app delployment on cluster.
 6. Check if K8s pods & service are running
     -  $ kubectl get pods

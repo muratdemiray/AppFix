@@ -40,7 +40,7 @@ aws configure # be sure to login!!!
 # Build Docker image and push to the repo
     # If you build a new image, don't forget to change
     # imagename variable in the "/helm-app/values.yaml" 
-# $ sudo docker build -t  testapp AppFix/docker/
+# $ sudo docker build -t  your-repo/app:latest AppFix/docker/
 # $ sudo docker login # be sure to login!
 # username: XXXX
 # password: XXXX 
