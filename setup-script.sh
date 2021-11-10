@@ -69,9 +69,11 @@ helm install --set db.username=testuser,db.password=usertest mysql helm-mysql/
 kubectl get pods
 kubectl get svc flask-web-svc
 
-echo "Check if app runs \n
-grep external-ip output \n
-open a webbrowser and visit <external-ip>:3000 \n
-external-ip dns propogration may take some time \n
+echo "Check if app runs 
+grep external-ip output using
+    # export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster
+    # kubectl get svc flask-web-svc
+open a webbrowser and visit <external-ip>:3000 
+external-ip dns propogration may take some time 
 wait for a time if you can't access url and try again!"
 
