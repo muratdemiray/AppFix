@@ -44,6 +44,7 @@ To standardize development environment you’ve started to work on docker contai
    execute  # sh ./AppFix/setup-script.sh (<!>don't forget to enter aws credentials when it promts, region:us-east-2)
 5. Wait for cluster creation and app delployment on cluster.
 6. Check if K8s pods & service are running
+    -  $ export KUBECONFIG=$KUBECONFIG:~/kubeconfig_AppFix-cluster
     -  $ kubectl get pods
     -  $ kubectl get svc flask-web-svc
 7. Check if app runs
